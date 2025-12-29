@@ -1,0 +1,16 @@
+{
+  "users": {
+    "1763545779": {
+      "user_id": "1763545779",
+      "username": "arrisstocrat",
+      "name": "Frostbite",
+      "joined": "2025-12-29 18:20:45.021916",
+      "analyzes": 21
+    }
+  },
+  "stats": {
+    "analyzes": 21,
+    "threats": 15
+  },
+  "blocked_users": {}
+}
