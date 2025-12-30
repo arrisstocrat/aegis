@@ -45,12 +45,12 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await query.answer()
     data = query.data
     if data == 'start': await start(update, context)
-    elif data == 'about': await query.edit_message_text("🛡️ <b>О БОТЕ</b>\n🔴 Фишинг\n👤 Соц. инженерия\n🦠 Вредонос\n💳 Кража данных\n<b>Точность: 96-98%</b>", parse_mode='HTML', reply_markup=get_back_menu())
+    elif data == 'about': await query.edit_message_text("🛡️ <b>О БОТЕ</b>\n\nМы защищаем вас от:\n\n🔴 Фишинга\n👤 Соц. инженерии\n🦠 Вредоносов\n💳 Кражи данных\n<b>\nТочность определения: 96-98%</b>", parse_mode='HTML', reply_markup=get_back_menu())
     elif data == 'stats':
         s = admin.get_stats()
-        await query.edit_message_text(f"📊 <b>СТАТИСТИКА</b>\n👥 Пользователей: {s['users']}\n🔍 Проверок: {s['analyzes']}\n⚠️ Угроз: {s['threats']}\n🚫 Блокировано: {s['blocked_users']}", parse_mode='HTML', reply_markup=get_back_menu())
+        await query.edit_message_text(f"📊 <b>СТАТИСТИКА</b>\n👥 Пользователей: {s['users']}\n🔍 Проверок: {s['analyzes']}\n⚠️ Угроз: {s['threats']}\n🚫 Залокировано пользователей: {s['blocked_users']}", parse_mode='HTML', reply_markup=get_back_menu())
     elif data == 'threats': await query.edit_message_text("📚 <b>ВИДЫ УГРОЗ</b>\n1. Фишинг\n2. Соц. инженерия\n3. BEC\n4. Вредонос\n5. Кража данных\n6. Job scam\n7. Romance scam", parse_mode='HTML', reply_markup=get_back_menu())
-    elif data == 'privacy': await query.edit_message_text("🔐 <b>GDPR</b>\n✅ Собираем: ID, имя, кол-во проверок\n❌ НЕ собираем: тексты сообщений\n/delete_my_data - удалить всё", parse_mode='HTML', reply_markup=get_back_menu())
+    elif data == 'privacy': await query.edit_message_text("🔐 <b>Мы строго соответсвуем <b>GDPR</b> (общему регламенту по защите данных)</b>\n\n✅ Собираем: ID, имя, кол-во проверок\n❌ НЕ собираем: тексты сообщений\n\n/delete_my_data - удалить все мои данные", parse_mode='HTML', reply_markup=get_back_menu())
     elif 'admin_' in data:
         if query.from_user.id != ADMIN_ID: await query.answer("❌ Нет доступа!", show_alert=True); return
         if data == 'admin_full_stats':
